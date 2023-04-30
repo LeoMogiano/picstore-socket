@@ -52,6 +52,24 @@ io.on('connection', (socket) => {
 
     });
 
+    socket.on('notification_user', (data) => {
+        // Prepare data for table insertion for orders.
+        console.log(data);
+        let notification = {
+            user_id: data.user_id,
+            evento_id: data.evento_id,
+            foto_c: data.foto_c,
+            evento_name: data.evento_name,
+            evento_lugar: data.evento_lugar,
+            
+        };
+
+        /* console.log(notification); */
+
+        io.emit('notification_processed_user', notification);
+
+    });
+
     /* socket.on('order', (data) => {
         // Prepare data for table insertion for orders.
         let order = {
