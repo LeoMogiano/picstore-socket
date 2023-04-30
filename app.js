@@ -13,11 +13,11 @@ const port = process.env.port || 3030;
 });
  */
 // Now let's create a server that will listen to our port.
-const server = app.listen(`${port}`, () => {
+const server = app.listen(port, '0.0.0.0', function () {
     console.log(`Server started on port ${port}`);
-    // Connect to our database.
-    /* connection.connect(); */
-});
+  });
+  
+
 
 // Intialize Socket
 const io = require("socket.io")(server, {
