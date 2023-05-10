@@ -56,6 +56,7 @@ io.on('connection', (socket) => {
         // Prepare data for table insertion for orders.
         console.log(data);
         let notification = {
+            message: 'Hola! Apareces en una foto',
             user_id: data.user_id,
             evento_id: data.evento_id,
             foto_c: data.foto_c,
